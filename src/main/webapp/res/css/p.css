@@ -1,10 +1,30 @@
 /*!
+/*!
  * Bootstrap v3.2.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+}
+.header {
+	background-color: #f1f1f1;
+	border-bottom: 1px solid #e5e5e5;
+}
+.header .mod-header a{
+	display: block;
+	height: 55px;
+	width: 160px;
+}
+.navbar .mod-header a img{
+	margin-top: 7px;
+}
+.login-link{
+ 	float: right;
+ 	padding-top: 10px;
+ }
 
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 .sidebar {
 	position: fixed;
 	top: 0;
@@ -15,14 +35,21 @@
 	padding: 20px;
 	overflow-x: hidden;
 	overflow-y: auto;
-	background-color: #f5f5f5;
+	background-color: #293541;
 	border-right: 1px solid #eee;
 }
-.nav-sidebar{
+.nav-sidebar,.nav-sidebar-all{
 	margin-right: -21px;
-	margin-bottom: 20px;
+
 	margin-left: -20px;
 }
+.nav-sidebar-all{
+	border-bottom: 1px solid #36424E;
+}
+.nav-sidebar{
+	margin-bottom: 20px;
+}
+
 .mtm20px{
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -30,4 +57,11 @@
 .mtm10px{
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+.ft-right{
+	float: right;
+}
+.nav-icon{
+	float: right;
+	color: #717A81;
 }

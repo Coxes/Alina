@@ -16,14 +16,10 @@
 		</encoder>
 	</appender>
 
-	<!-- project default level -->
-	<logger name="org.springside.examples.quickstart" level="INFO" />
-
 	<!--log4jdbc -->
 	<logger name="jdbc.sqltiming" level="INFO"/>
 
 	<root level="WARN">
 		<appender-ref ref="console" />
-		<appender-ref ref="rollingFile" />
 	</root>
 </configuration>
