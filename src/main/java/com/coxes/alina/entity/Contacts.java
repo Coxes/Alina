@@ -1,21 +1,13 @@
 package com.coxes.alina.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
 public class Contacts extends IdEntity {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1793206291567425228L;
 
 	private String picture;
@@ -23,7 +15,6 @@ public class Contacts extends IdEntity {
 	private String firstName;
 	private String phone;
 	private String email;
-	private Date birthday;
 	private ContactsGroup contactsGroup;
 
 	@Column(length = 100)
@@ -69,16 +60,6 @@ public class Contacts extends IdEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	@Column
-	@Temporal(TemporalType.DATE)
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
 	}
 
 	@ManyToOne

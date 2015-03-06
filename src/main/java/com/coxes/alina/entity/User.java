@@ -1,38 +1,21 @@
 package com.coxes.alina.entity;
 
-import java.util.Date;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User extends IdEntity {
-	/**
-	 * Serializable ID
-	 */
 	private static final long serialVersionUID = 2925609031342843697L;
-
-	private String username;
-	private String password;
-	private String lastName;
-	private String firstName;
+	/** 手机号 */
 	private String phone;
-	private Date birthday;
-	private Set<ContactsGroup> contactsGroup;
-
-	@Column(length = 20)
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
+	/** 密码 */
+	private String password;
+	/** 姓 */
+	private String lastName;
+	/** 名 */
+	private String firstName;
+	private UserDetail userDetail;
 
 	@Column(length = 50)
 	public String getPassword() {
@@ -70,21 +53,13 @@ public class User extends IdEntity {
 		this.phone = phone;
 	}
 
-	@Temporal(TemporalType.DATE)
-	public Date getBirthday() {
-		return birthday;
+	@OneToOne(mappedBy = "user")
+	public UserDetail getUserDetail() {
+		return userDetail;
 	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	public Set<ContactsGroup> getContactsGroup() {
-		return contactsGroup;
-	}
-
-	public void setContactsGroup(Set<ContactsGroup> contactsGroup) {
-		this.contactsGroup = contactsGroup;
-	}
 }

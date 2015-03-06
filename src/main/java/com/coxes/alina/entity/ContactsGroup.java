@@ -7,9 +7,6 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class ContactsGroup extends IdEntity {
-	/**
-	 * Serializable ID
-	 */
 	private static final long serialVersionUID = -7673149390646488501L;
 
 	private String groupName;

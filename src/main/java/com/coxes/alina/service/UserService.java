@@ -1,9 +1,6 @@
 package com.coxes.alina.service;
 
 import java.lang.reflect.InvocationTargetException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -24,16 +21,13 @@ public class UserService extends CrudService<UserDao, User, Long> {
 	@Autowired
 	private UserDao userDao;
 
+	@Override
 	public Iterable<User> findAll() {
 		return userDao.findAll();
 	}
 
-	public User findByUsernameAndPassword(String username, String password) {
-		return userDao.findByUsernameAndPassword(username, password);
-	}
-
-	public User findByUsername(String username) {
-		return userDao.findByUsername(username);
+	public User findByPhone(String phone) {
+		return userDao.findByPhone(phone);
 	}
 
 	public User save(RegisterVo vo) {
@@ -41,7 +35,6 @@ public class UserService extends CrudService<UserDao, User, Long> {
 		try {
 			BeanUtils.copyProperties(user, vo);
 			GregorianCalendar birthday = new GregorianCalendar(vo.getBirthdayYear(), vo.getBirthdayMonth() - 1, vo.getBirthdayDay());
-			user.setBirthday(birthday.getTime());
 			return userDao.save(user);
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			return null;

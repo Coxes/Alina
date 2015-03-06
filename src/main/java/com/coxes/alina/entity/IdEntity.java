@@ -23,10 +23,6 @@ import javax.persistence.MappedSuperclass;
 // JPA 基类的标识
 @MappedSuperclass
 public abstract class IdEntity implements Serializable {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2530209979695905579L;
 	protected Long id;
 

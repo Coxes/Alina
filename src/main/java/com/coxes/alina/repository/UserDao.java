@@ -12,13 +12,13 @@ import com.coxes.alina.entity.User;
 
 public interface UserDao extends PagingAndSortingRepository<User, Long>, JpaSpecificationExecutor<User> {
 	/**
-	 * 获取用户，根据用户名和密码
-	 * 
-	 * @param username
-	 * @param password
-	 * @return
+	 * 根据手机号获取用户
 	 */
-	User findByUsernameAndPassword(String username, String password);
+	User findByPhone(String phone);
 
-	User findByUsername(String username);
+	/**
+	 * 根据手机号和密码获取用户
+	 */
+	User findByPhoneAndPassword(String phone, String password);
+
 }
