@@ -6,7 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ContactsGroup extends IdEntity {
+public class ContactsGroup extends EntityBasic {
 	private static final long serialVersionUID = -7673149390646488501L;
 
 	private String groupName;

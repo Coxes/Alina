@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 @Entity
-public class Contacts extends IdEntity {
+public class Contacts extends EntityBasic {
 	private static final long serialVersionUID = -1793206291567425228L;
 
 	private String picture;

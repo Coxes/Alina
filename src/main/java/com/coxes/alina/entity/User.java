@@ -2,10 +2,11 @@ package com.coxes.alina.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
 @Entity
-public class User extends IdEntity {
+public class User extends EntityBasic {
 	private static final long serialVersionUID = 2925609031342843697L;
 	/** 手机号 */
 	private String phone;
@@ -15,6 +16,7 @@ public class User extends IdEntity {
 	private String lastName;
 	/** 名 */
 	private String firstName;
+
 	private UserDetail userDetail;
 
 	@Column(length = 50)
@@ -53,7 +55,7 @@ public class User extends IdEntity {
 		this.phone = phone;
 	}
 
-	@OneToOne(mappedBy = "user")
+	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
 	public UserDetail getUserDetail() {
 		return userDetail;
 	}

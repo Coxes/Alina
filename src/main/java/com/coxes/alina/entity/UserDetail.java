@@ -2,12 +2,13 @@ package com.coxes.alina.entity;
 
 import java.util.Date;
 
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-public class UserDetail extends IdEntity {
+public class UserDetail extends EntityBasic {
 	private static final long serialVersionUID = -1712527460101687278L;
 	private User user;
 	/** 电子邮件 */
@@ -18,6 +19,8 @@ public class UserDetail extends IdEntity {
 	private String sex;
 	/** 故乡 */
 	private String hometown;
+	/** 身份证 */
+	private String identityCard;
 
 	@Temporal(TemporalType.DATE)
 	public Date getBirthday() {
@@ -28,7 +31,7 @@ public class UserDetail extends IdEntity {
 		this.birthday = birthday;
 	}
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
 	public User getUser() {
 		return user;

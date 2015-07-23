@@ -19,8 +19,8 @@ public class ContactsServiceTest extends SpringTransactionalTestCase {
 		Contacts contacts = new Contacts();
 		contacts.setContactsGroup(contactsGroupService.findOne(5l));
 		contacts.setPhone("13631779280");
-		contacts.setFirstName("云");
-		contacts.setLastName("马");
+		contacts.setFirstName("徐");
+		contacts.setLastName("小明");
 
 		contactsService.save(contacts);
 	}
