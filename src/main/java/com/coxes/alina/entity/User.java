@@ -6,7 +6,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
 @Entity
-public class User extends EntityBasic {
+public class User extends BasicEntity {
 	private static final long serialVersionUID = 2925609031342843697L;
 	/** 手机号 */
 	private String phone;
@@ -16,6 +16,8 @@ public class User extends EntityBasic {
 	private String lastName;
 	/** 名 */
 	private String firstName;
+	/** 头像 */
+	private String portrait;
 
 	private UserDetail userDetail;
 

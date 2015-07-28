@@ -1,15 +1,13 @@
 package com.coxes.alina.entity;
 
-import java.util.Date;
-
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-public class Diary extends BasicEntity {
-	private static final long serialVersionUID = -1622698326543038982L;
+public class Note extends BasicEntity {
+	private static final long serialVersionUID = -5364949257195373739L;
 	private User user;
-	private Date recordDate;
+	private NoteBook noteBook;
 	private String content;
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -22,12 +20,14 @@ public class Diary extends BasicEntity {
 		this.user = user;
 	}
 
-	public Date getRecordDate() {
-		return recordDate;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "note_book_id")
+	public NoteBook getNoteBook() {
+		return noteBook;
 	}
 
-	public void setRecordDate(Date recordDate) {
-		this.recordDate = recordDate;
+	public void setNoteBook(NoteBook noteBook) {
+		this.noteBook = noteBook;
 	}
 
 	public String getContent() {

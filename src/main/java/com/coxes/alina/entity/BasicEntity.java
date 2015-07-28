@@ -31,7 +31,7 @@ import org.springframework.data.annotation.LastModifiedDate;
  */
 // JPA 基类的标识
 @MappedSuperclass
-public abstract class EntityBasic implements Serializable {
+public abstract class BasicEntity implements Serializable {
 	private static final long serialVersionUID = -2530209979695905579L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

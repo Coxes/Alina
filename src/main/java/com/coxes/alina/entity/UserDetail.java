@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-public class UserDetail extends EntityBasic {
+public class UserDetail extends BasicEntity {
 	private static final long serialVersionUID = -1712527460101687278L;
 	private User user;
 	/** 电子邮件 */

@@ -1,6 +1,8 @@
 package com.coxes.alina;
 
-import org.apache.catalina.startup.Tomcat;
+import java.text.ParseException;
+
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,14 +11,29 @@ public class Main {
 	private static Logger logger = LoggerFactory.getLogger(Main.class);
 
 	public static void main(String[] args) throws Exception {
-		Tomcat tomcat = new Tomcat();
-		tomcat.setPort(8081);
-		tomcat.getConnector().setURIEncoding("UTF-8");
-		String path = Main.class.getResource("/").getPath();
-		tomcat.addWebapp("/poseidon", path.substring(0, path.indexOf("target")) + "src/main/webapp");
-		tomcat.start();
-		logger.info("Started tomcat");
-		tomcat.getServer().await();
+		// Tomcat tomcat = new Tomcat();
+		// tomcat.setPort(8081);
+		// tomcat.getConnector().setURIEncoding("UTF-8");
+		// String path = Main.class.getResource("/").getPath();
+		// tomcat.addWebapp("/poseidon", path.substring(0,
+		// path.indexOf("target")) + "src/main/webapp");
+		// tomcat.start();
+		// logger.info("Started tomcat");
+		// tomcat.getServer().await();
+		final FastDateFormat dateFormat = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss");
+		for (int i = 0; i < 20; i++) {
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						System.out.println(dateFormat.parse("2015-07-24 10:35:00"));
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+				}
+			}).start();
+		}
+
 	}
 	// public static void main(String[] args) throws Exception {
 	//
