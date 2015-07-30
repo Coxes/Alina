@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity(name = "ala_contacts_group")
 public class ContactsGroup extends BasicEntity {
 	private static final long serialVersionUID = -7673149390646488501L;
 

@@ -2,12 +2,14 @@ package com.coxes.alina.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@Entity(name = "ala_user_detail")
 public class UserDetail extends BasicEntity {
 	private static final long serialVersionUID = -1712527460101687278L;
 	private User user;
