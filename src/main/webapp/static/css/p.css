@@ -5,6 +5,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 body {
-	font-size: 12px;
-	font-family: Tahoma,Verdana,STHeiTi,simsun,sans-serif;
+    margin: 0;
+    font-family: Tahoma,"\5b8b\4f53",Arial,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+    background-color: #fff;
 }
