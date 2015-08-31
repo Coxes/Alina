@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
+import org.hibernate.envers.Audited;
+
+@Audited
 @Entity(name = "ala_user")
 public class User extends BasicEntity {
 	private static final long serialVersionUID = 2925609031342843697L;
