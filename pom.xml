@@ -30,6 +30,23 @@
 	</properties>
 	<dependencies>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<!-- WEB begin -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -46,8 +63,6 @@
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-
-
 		<!-- WEB end -->
 
 		<!-- JPA begin -->
@@ -55,6 +70,12 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>${spring-data-jpa.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>

@@ -9,6 +9,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.envers.Audited;
+
+@Audited
 @Entity(name = "ala_user_detail")
 public class UserDetail extends BasicEntity {
 	private static final long serialVersionUID = -1712527460101687278L;

@@ -6,6 +6,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
+import org.hibernate.envers.Audited;
+
+@Audited
 @Entity(name = "ala_contacts")
 public class Contacts extends BasicEntity {
 	private static final long serialVersionUID = -1793206291567425228L;

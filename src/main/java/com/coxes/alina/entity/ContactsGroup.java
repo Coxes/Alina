@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.envers.Audited;
+
+@Audited
 @Entity(name = "ala_contacts_group")
 public class ContactsGroup extends BasicEntity {
 	private static final long serialVersionUID = -7673149390646488501L;
