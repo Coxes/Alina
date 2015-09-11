@@ -26,6 +26,7 @@
 		<mockito.version>1.9.5</mockito.version>
 		<servlet.version>3.0.1</servlet.version>
 		<apache.commons.version>3.2.1</apache.commons.version>
+		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 		<google.zxing.version>3.1.0</google.zxing.version>
 	</properties>
 	<dependencies>
@@ -62,6 +63,11 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons.fileupload.version}</version>
 		</dependency>
 		<!-- WEB end -->
 

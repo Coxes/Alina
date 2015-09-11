@@ -28,7 +28,7 @@
 				/res/** = anon
 				/register/** = anon
 				/admin/** = roles[admin]
-				/** = user
+				/** = anon
 			</value>
 		</property>
 	</bean>

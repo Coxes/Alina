@@ -1,8 +1,5 @@
 package com.coxes.alina.web.controller;
 
-import java.lang.reflect.InvocationTargetException;
-
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,12 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.coxes.alina.entity.User;
 import com.coxes.alina.service.ContactsGroupService;
 import com.coxes.alina.service.ContactsService;
 import com.coxes.alina.service.UserService;
 import com.coxes.alina.utils.AlinaUtil;
-import com.coxes.alina.web.vo.PageVo;
 import com.coxes.alina.web.vo.RegisterVo;
 
 @Controller
