@@ -29,9 +29,9 @@ public class HomeController {
 		return "register";
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	@RequestMapping(value = "/do-register", method = RequestMethod.POST)
 	public String doRegister(RegisterVo vo) {
-		userService.save(vo);
+		userService.register(vo);
 		return "redirect:/login";
 	}
 
@@ -40,7 +40,7 @@ public class HomeController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/do-login", method = RequestMethod.POST)
 	public String fail(@RequestParam(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM) String userName, Model model) {
 		model.addAttribute(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM, userName);
 		return "login";

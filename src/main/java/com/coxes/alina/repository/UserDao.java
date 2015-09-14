@@ -5,12 +5,12 @@
  *******************************************************************************/
 package com.coxes.alina.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.coxes.alina.entity.User;
 
-public interface UserDao extends PagingAndSortingRepository<User, Long>, JpaSpecificationExecutor<User> {
+public interface UserDao extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
 	/**
 	 * 根据手机号获取用户
 	 */

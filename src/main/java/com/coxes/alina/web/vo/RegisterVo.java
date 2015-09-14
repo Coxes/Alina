@@ -3,11 +3,8 @@ package com.coxes.alina.web.vo;
 public class RegisterVo {
 	private String lastName;
 	private String firstName;
-	private String username;
+	private String phone;
 	private String password;
-	private Integer birthdayYear;
-	private Integer birthdayMonth;
-	private Integer birthdayDay;
 
 	public String getLastName() {
 		return lastName;
@@ -25,14 +22,6 @@ public class RegisterVo {
 		this.firstName = firstName;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -41,27 +30,12 @@ public class RegisterVo {
 		this.password = password;
 	}
 
-	public Integer getBirthdayYear() {
-		return birthdayYear;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setBirthdayYear(Integer birthdayYear) {
-		this.birthdayYear = birthdayYear;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public Integer getBirthdayMonth() {
-		return birthdayMonth;
-	}
-
-	public void setBirthdayMonth(Integer birthdayMonth) {
-		this.birthdayMonth = birthdayMonth;
-	}
-
-	public Integer getBirthdayDay() {
-		return birthdayDay;
-	}
-
-	public void setBirthdayDay(Integer birthdayDay) {
-		this.birthdayDay = birthdayDay;
-	}
 }

@@ -1,11 +1,12 @@
 package com.coxes.alina.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public abstract class CrudService<DAO extends CrudRepository<T, ID>, T, ID extends Serializable> {
+public abstract class CrudService<DAO extends JpaRepository<T, ID>, T, ID extends Serializable> {
 
 	@Autowired
 	protected DAO dao;
@@ -14,7 +15,7 @@ public abstract class CrudService<DAO extends CrudRepository<T, ID>, T, ID exten
 		return dao.findOne(id);
 	}
 
-	public Iterable<T> findAll() {
+	public List<T> findAll() {
 		return dao.findAll();
 	}
 

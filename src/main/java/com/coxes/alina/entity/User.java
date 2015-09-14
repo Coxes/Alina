@@ -13,6 +13,8 @@ public class User extends BasicEntity {
 	private static final long serialVersionUID = 2925609031342843697L;
 	/** 手机号 */
 	private String phone;
+	/** 电子邮件 */
+	private String email;
 	/** 密码 */
 	private String password;
 	/** 姓 */
@@ -67,6 +69,22 @@ public class User extends BasicEntity {
 
 	public void setUserDetail(UserDetail userDetail) {
 		this.userDetail = userDetail;
+	}
+
+	public String getPortrait() {
+		return portrait;
+	}
+
+	public void setPortrait(String portrait) {
+		this.portrait = portrait;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
