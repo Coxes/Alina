@@ -6,12 +6,19 @@
 
 	<description>Shiro安全配置</description>
 
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	</bean>
+
+	<bean id="credentialsMatcher" class="com.coxes.alina.authc.BCryptCredentialsMatcher">
+		<property name="passwordEncoder" ref="passwordEncoder" />
+	</bean>
+
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="shiroDbRealm" />
 	</bean>
 
 	<!-- 項目自定义的Realm, 所有accountService依赖的dao都需要用depends-on声明 -->
-	<bean id="shiroDbRealm" class="com.coxes.alina.service.ShiroDbRealm">
+	<bean id="shiroDbRealm" class="com.coxes.alina.authc.ShiroDbRealm">
 		<property name="userService" ref="userService" />
 	</bean>
 

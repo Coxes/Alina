@@ -12,7 +12,7 @@
 		<slf4j.version>1.7.7</slf4j.version>
 		<spring.version>4.0.5.RELEASE</spring.version>
 		<activemq.version>5.7.0</activemq.version>
-		<shiro.version>1.2.3</shiro.version>
+		<shiro.version>1.2.4</shiro.version>
 		<jstl.version>1.2</jstl.version>
 		<logback.version>1.1.2</logback.version>
 		<guava.version>17.0</guava.version>
@@ -28,9 +28,10 @@
 		<apache.commons.version>3.2.1</apache.commons.version>
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 		<google.zxing.version>3.1.0</google.zxing.version>
+		<spring.security.version>4.0.2.RELEASE</spring.security.version>
 	</properties>
 	<dependencies>
-
+		<!-- spring begin -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -47,7 +48,13 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- spring end -->
+		
 		<!-- WEB begin -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -81,6 +88,14 @@
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-aop</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-orm</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-tx</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -110,6 +125,11 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${apache.commons.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
 		</dependency>
 		<!-- UTILS end -->
 

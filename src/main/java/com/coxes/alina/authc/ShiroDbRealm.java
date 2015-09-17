@@ -1,4 +1,4 @@
-package com.coxes.alina.service;
+package com.coxes.alina.authc;
 
 import java.io.Serializable;
 
@@ -12,6 +12,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import com.coxes.alina.entity.User;
+import com.coxes.alina.service.UserService;
 import com.google.common.base.Objects;
 
 public class ShiroDbRealm extends AuthorizingRealm {

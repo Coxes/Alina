@@ -5,6 +5,8 @@ import java.lang.reflect.InvocationTargetException;
 import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.coxes.alina.entity.User;
@@ -13,6 +15,8 @@ import com.coxes.alina.web.vo.RegisterVo;
 
 @Service
 public class UserService extends CrudService<UserDao, User, Long> {
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	private static Logger logger = LoggerFactory.getLogger(UserService.class);
 

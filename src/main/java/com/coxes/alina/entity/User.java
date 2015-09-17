@@ -23,6 +23,10 @@ public class User extends BasicEntity {
 	private String firstName;
 	/** 头像 */
 	private String portrait;
+	/** 签名 */
+	private String signature;
+	/** 状态 */
+	private String state;
 
 	private UserDetail userDetail;
 
@@ -85,6 +89,22 @@ public class User extends BasicEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getSignature() {
+		return signature;
+	}
+
+	public void setSignature(String signature) {
+		this.signature = signature;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 }
