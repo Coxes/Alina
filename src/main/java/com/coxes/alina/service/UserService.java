@@ -21,13 +21,14 @@ public class UserService extends CrudService<UserDao, User, Long> {
 	private static Logger logger = LoggerFactory.getLogger(UserService.class);
 
 	public User findByPhone(String phone) {
-		return this.findByPhone(phone);
+		return dao.findByPhone(phone);
 	}
 
 	public User register(RegisterVo vo) {
 		User user = new User();
 		try {
 			BeanUtils.copyProperties(user, vo);
+			user.setPassword(passwordEncoder.encode(vo.getPassword()));
 			return this.save(user);
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			logger.error("创建 User 对象异常", e);

@@ -27,7 +27,7 @@
 <body>
 	<h1>你好！</h1>
 	<form action="${ctx}/file/upload" method="post" enctype="multipart/form-data" id="simple-form">
-		<input type="file" name="file" /> <a id="pp_submit">提交</a>
+		<input type="file" name="file" id="sss_a" /> <a id="pp_submit">提交</a>
 	</form>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -38,7 +38,10 @@
 	<script type="text/javascript">
 		$(function() {
 			$('#pp_submit').on('click', function() {
-				$('#simple-form').ajaxSubmit({
+				var newForm = $('<form action="" method="POST" enctype="multipart/form-data"></form>');
+				$('body').append(newForm);
+				jQuery('#sss_a').appendTo(newForm);
+				newForm.ajaxSubmit({
 					type : "post", //提交方式  
 					dataType : "json", //数据类型  
 					url : "${ctx}/file/upload", //请求url  

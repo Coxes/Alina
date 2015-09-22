@@ -11,13 +11,13 @@
 <title>注册</title>
 
 <!-- Bootstrap -->
-<link href="${ctx}/res/bootstrap/3.2.0/css/bootstrap.css"
+<link href="${ctx}/static/bootstrap/css/bootstrap.css"
 	rel="stylesheet">
-<link href="${ctx}/res/font-awesome/css/font-awesome.min.css"
+<link href="${ctx}/static/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet">
 
-<link href="${ctx}/res/css/p.css" rel="stylesheet">
-<link href="${ctx}/res/css/register.css" rel="stylesheet">
+<link href="${ctx}/static/css/p.css" rel="stylesheet">
+<link href="${ctx}/static/css/register.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -44,7 +44,7 @@
 			<div class="col-xs-7">构建中。</div>
 			<div class="col-xs-5">
 				<form class="form-horizontal form-register" role="form"
-					method="post" action="${ctx}/register">
+					method="post" action="${ctx}/do-register">
 					<div class="form-group">
 						<label for="inputEmail3" class="col-xs-3 control-label">姓名</label>
 						<div class="col-xs-8 col-name">
@@ -59,38 +59,21 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-xs-3 control-label">用户名</label>
+						<label for="inputEmail3" class="col-xs-3 control-label">手机号</label>
 						<div class="col-xs-8">
-							<input type="text" class="form-control" id="username"
-								name="username" placeholder="用户名">
+							<input type="text" class="form-control" id="username" name="phone" placeholder="手机号">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-xs-3 control-label">密码</label>
 						<div class="col-xs-8">
-							<input type="password" class="form-control" id="password"
-								name="password" placeholder="密码">
+							<input type="password" class="form-control" id="password" name="password" placeholder="密码">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-xs-3 control-label">确认密码</label>
 						<div class="col-xs-8">
-							<input type="password" class="form-control" id="password"
-								name="password" placeholder="确认密码">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputPassword3" class="col-xs-3 control-label">生日</label>
-						<div class="col-xs-8 col-birthday">
-							<div class="col-xs-4">
-								<input name="birthdayYear" placeholder="年" class="form-control" />
-							</div>
-							<div class="col-xs-4">
-								<input name="birthdayMonth" placeholder="月" class="form-control" />
-							</div>
-							<div class="col-xs-4">
-								<input name="birthdayDay" placeholder="日" class="form-control" />
-							</div>
+							<input type="password" class="form-control" id="againPassword" name="againPassword" placeholder="确认密码">
 						</div>
 					</div>
 

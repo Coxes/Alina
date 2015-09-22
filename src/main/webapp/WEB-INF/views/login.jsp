@@ -1,3 +1,4 @@
+<%@page import="org.apache.shiro.web.filter.authc.FormAuthenticationFilter"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
@@ -10,7 +11,7 @@
 <title>登录</title>
 
 <!-- Bootstrap -->
-<link href="${ctx}/res/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
+<link href="${ctx}/static/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${ctx}/res/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -37,8 +38,26 @@
 		<hr />
 		<div class="row">
 			<div class="col-sm-7">
-				<form class="form-horizontal form-register" role="form"
-					method="post">
+				<form action="${ctx}/login" class="form-horizontal form-register" role="form" method="post">
+						<%
+			String error = (String) request.getAttribute(FormAuthenticationFilter.DEFAULT_ERROR_KEY_ATTRIBUTE_NAME);
+			if(error != null){
+		%>
+				<div class="alert alert-error controls input-large">
+					<button class="close" data-dismiss="alert">×</button>
+		<%
+				if(error.contains("DisabledAccountException")){
+					out.print("用户已被屏蔽,请登录其他用户.");
+				}
+				else{
+					out.print("登录失败，请重试.");
+					out.print(error);
+				}
+		%>		
+				</div>
+		<%
+			}
+		%>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">帐号：</label>
 						<div class="col-sm-10">

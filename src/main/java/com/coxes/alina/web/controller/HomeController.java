@@ -40,7 +40,7 @@ public class HomeController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/do-login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String fail(@RequestParam(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM) String userName, Model model) {
 		model.addAttribute(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM, userName);
 		return "login";
@@ -50,6 +50,7 @@ public class HomeController {
 	public String home(Integer page, Integer size, Model model) {
 		User user = userService.findOne(AlinaUtil.getUserid());
 		model.addAttribute("user", user);
+		model.addAttribute("users", user);
 		model.addAttribute("contacts", contactsService.findByUserId(user.getId()));
 		return "/index";
 	}
