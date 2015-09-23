@@ -17,5 +17,8 @@ public class Main {
 		tomcat.start();
 		logger.info("Started tomcat");
 		tomcat.getServer().await();
+		// ByteSource salt = new SecureRandomNumberGenerator().nextBytes();
+		// System.out.println(new Sha512Hash("123456", salt).toBase64());
+
 	}
 }
