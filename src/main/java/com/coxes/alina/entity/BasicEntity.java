@@ -8,6 +8,7 @@ package com.coxes.alina.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +21,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
  * 统一定义id的entity基类.
@@ -31,6 +33,7 @@ import org.springframework.data.annotation.LastModifiedDate;
  */
 // JPA 基类的标识
 @MappedSuperclass
+@EntityListeners({ AuditingEntityListener.class })
 public abstract class BasicEntity implements Serializable {
 	private static final long serialVersionUID = -2530209979695905579L;
 	@Id
